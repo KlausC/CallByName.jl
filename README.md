@@ -6,7 +6,7 @@
 
 Support the call-by-name feature.
 
-#usage
+### usage
 
 ```
 using CallByName
@@ -19,9 +19,10 @@ function f(x::CallArg{T}) where T<:Real
 end
 
 
-a = 42;
-f(@stub begin println("evaluating"); global a = a + 1 end, Float64);
-a
+julia> a = 42;
+julia> f((@stub begin println("evaluating"); global a = a + 1 end, Float64));
+evaluating
+julia> a
 43
 ```
 
