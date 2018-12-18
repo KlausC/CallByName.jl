@@ -19,7 +19,7 @@ end
 
 
 julia> a = 42;
-julia> f((@stub begin println("evaluating"); global a = a + 1 end, Float64));
+julia> f((@stub begin println("evaluating"); global a = a + 1 end Float64));
 evaluating
 julia> a
 43
